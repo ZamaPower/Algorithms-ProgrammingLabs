@@ -148,7 +148,7 @@ char **sort_data(char ***index, int row,int col){
     while (posInIndex<row*col) {
         smallestCharPos=-1;
         for (i=0; i<row; i++) {
-            if ((smallestCharPos==-1)||(strcmp(index[i][tracker[i]], buffer)<0)) {
+            if (tracker[i]<col&&((smallestCharPos==-1)||(strcmp(index[i][tracker[i]], buffer)<0))) {
                 smallestCharPos=i;
                 buffer=index[i][tracker[i]];
             }
